@@ -34,8 +34,32 @@
    font-family: "Geist", sans-serif;
 }
     </style>
-</head>
-<body>
+  </head>
+  <body class="w-10/12 mx-auto bg-[#EEF4FF] pt-10">
+
+<h2 class="font-bold text-3xl pl-5">Job Application Tracker</h2>
+
+<!-- Dashboard -->
+<section class="dashboard-section">
+  <div class="dashboard-grid grid grid-cols-3 gap-3 p-5">
+
+    <div class="dashboard-total bg-white p-4">
+      <h4>Total</h4>
+      <h2 id="total-count" class="font-semibold text-[1.5rem]">8</h2>
+    </div>
+
+    <div class="dashboard-interview bg-white p-4">
+      <h4>Interview</h4>
+      <h2 id="interview-count" class="text-[#1dad35] font-semibold text-[1.5rem]">0</h2>
+    </div>
+
+    <div class="dashboard-rejected bg-white p-4">
+      <h4>Rejected</h4>
+      <h2 id="rejected-count" class="text-[#ad1a1a] font-semibold text-[1.5rem]">0</h2>
+    </div>
+
+  </div>
+</section>
   
 </body>
 </html>
