@@ -263,3 +263,28 @@ rejectedButtons.forEach((btn) => {
   });
 
 });
+
+// Delete buttons
+
+const deleteButtons = document.querySelectorAll(".job-delete-btn");
+
+deleteButtons.forEach((btn) => {
+
+  btn.addEventListener("click", function () {
+
+    const confirmDelete = confirm("Are you sure you want to delete this job?");
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    const card = btn.closest(".job-item");
+    card.remove();
+
+    updateAllCounts();
+    filterJobsByTab(currentTab);
+    updateTabJobCount(currentTab);
+
+  });
+
+});
