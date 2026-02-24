@@ -188,3 +188,78 @@ function initializeStatus() {
   });
 
 }
+
+// Interview buttons
+
+const interviewButtons = document.querySelectorAll(".job-interview-btn");
+
+interviewButtons.forEach((btn) => {
+
+  btn.addEventListener("click", function () {
+
+    const card = btn.closest(".job-item");
+    const badge = card.querySelector(".job-status");
+
+    const currentStatus = card.getAttribute("data-status");
+
+    if (currentStatus === "interview") {
+      alert("This job is already marked as Applied.");
+      return;
+    }
+
+    card.setAttribute("data-status", "interview");
+
+    badge.innerText = "Applied";
+
+    badge.classList.remove("bg-[#153b6444]");
+    badge.classList.remove("bg-[#FEE2E2]");
+    badge.classList.add("bg-[#DCFCE7]");
+    badge.style.color = "#166534";
+
+    alert("Job marked as Applied.");
+
+    updateAllCounts();
+    filterJobsByTab(currentTab);
+    updateTabJobCount(currentTab);
+
+  });
+
+});
+
+
+// Rejected buttons
+
+const rejectedButtons = document.querySelectorAll(".job-rejected-btn");
+
+rejectedButtons.forEach((btn) => {
+
+  btn.addEventListener("click", function () {
+
+    const card = btn.closest(".job-item");
+    const badge = card.querySelector(".job-status");
+
+    const currentStatus = card.getAttribute("data-status");
+
+    if (currentStatus === "rejected") {
+      alert("This job is already marked as Rejected.");
+      return;
+    }
+
+    card.setAttribute("data-status", "rejected");
+
+    badge.innerText = "Rejected";
+
+    badge.classList.remove("bg-[#153b6444]");
+    badge.classList.remove("bg-[#DCFCE7]");
+    badge.classList.add("bg-[#FEE2E2]");
+    badge.style.color = "#991B1B";
+
+    alert("Job marked as Rejected.");
+
+    updateAllCounts();
+    filterJobsByTab(currentTab);
+    updateTabJobCount(currentTab);
+
+  });
+
+});
